@@ -11,7 +11,7 @@ LABEL summary="$SUMMARY" \
       version="1" \
       release="1.0"
 
-ADD elasticsearch-2.4.0.rpm /
+ADD elasticsearch-2.4.0.rpm run.sh rev.txt /
 
 RUN ["/bin/bash", "-c", "yum -y install epel-release"]
 RUN ["/bin/bash", "-c", "yum -y install java-1.8.0-openjdk nss_wrapper gettext"]
