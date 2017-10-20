@@ -18,7 +18,7 @@ RUN ["/bin/bash", "-c", "yum -y install java-1.8.0-openjdk nss_wrapper gettext"]
 
 RUN ["/bin/bash", "-c", "yum -y install /elasticsearch-2.4.0.rpm"]
 
-RUN sleep 10000000000
+#RUN sleep 10000000000
 
 
 RUN ["/bin/bash", "-c", "ln -s /etc/elasticsearch/ /usr/share/elasticsearch/config"]
