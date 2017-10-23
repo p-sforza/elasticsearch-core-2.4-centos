@@ -2,7 +2,7 @@
 #
 
 ELASTIC_LOG=/usr/share/elasticsearch/logs/elasticsearch.log
-echo "" > $ELASTIC_LOG
+runuser -l elasticsearch -c 'echo "" > $ELASTIC_LOG';
 
 ELASTIC_PID=$(ps -aux | grep -m1 elastic | grep -v grep | awk '{ print $2 }');
 if [ $ELASTIC_PID ]; then
