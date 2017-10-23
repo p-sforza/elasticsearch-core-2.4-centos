@@ -31,6 +31,7 @@ LABEL \
        version="1" \
        release="1"
 
+RUN ["/bin/bash", "-c", "mkdir -p ${HOME} && ls -lai ${HOME}"]
 ADD elasticsearch-2.4.0.rpm ${HOME}
 ADD run.sh ${HOME}
 
