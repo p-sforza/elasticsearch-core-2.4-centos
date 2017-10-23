@@ -8,7 +8,7 @@ ENV SUMMARY="Base image for elastic 2.4 and utils"      \
 - es-json-load bulk uploader in nodejs"
 
 ENV   \
-       HOME=/ \
+       HOME=/opt/app-root/src/ \
        ELASTIC_HOME=/usr/share/elasticsearch \
        JAVA_VER=1.8.0 \
        ES_VER=2.4.0 \
