@@ -10,7 +10,7 @@ ENV SUMMARY="Base image for elastic 2.4 and utils"      \
 ENV   \
        HOME=/opt/app-root/src/ \
        ELASTIC_HOME=/usr/share/elasticsearch \
-       ELASTIC_LOG=/usr/share/elasticsearch/logs/elasticsearch.log \
+       ELASTIC_LOG="/usr/share/elasticsearch/logs/elasticsearch.log" \
        JAVA_VER=1.8.0 \
        ES_VER=2.4.0 \
        ES_CONF=/usr/share/elasticsearch/config/ \
@@ -49,7 +49,7 @@ RUN ["/bin/bash", "-c", "chown -R elasticsearch:elasticsearch /usr/share/elastic
 
 RUN ["/bin/bash", "-c", "mkdir /home/elasticsearch"]
 RUN ["/bin/bash", "-c", "chsh -s /bin/bash elasticsearch"]
-RUN ["/bin/bash", "-c", "echo ELASTIC_LOG = ${ELASTIC_LOG} >>  /home/elasticsearch/.bash_proflle"]
+RUN ["/bin/bash", "-c", "echo ELASTIC_LOG = $ELASTIC_LOG >> /home/elasticsearch/.bash_proflle"]
 RUN ["/bin/bash", "-c", "chown -R elasticsearch:elasticsearch /home/elasticsearch/"]
 RUN ["/bin/bash", "-c", "chown -R elasticsearch:elasticsearch /etc/elasticsearch/"]
 RUN ["/bin/bash", "-c", "echo network.host: 0.0.0.0 >>  /usr/share/elasticsearch/config/elasticsearch.yml"]
