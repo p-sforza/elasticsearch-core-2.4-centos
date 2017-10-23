@@ -7,28 +7,29 @@ ENV SUMMARY="Base image for elastic 2.4 and utils"      \
 - plugin head to browse indexes \
 - es-json-load bulk uploader in nodejs"
 
-ENV HOME=/opt/app-root/src \
- ELASTIC_HOME=/usr/share/elasticsearch \
- JAVA_VER=1.8.0 \
- ES_VER=2.4.0 \
- ES_CONF=/usr/share/elasticsearch/config/ \
- INSTANCE_RAM=512G \
- NODE_QUORUM=1 \
- RECOVER_AFTER_NODES=1 \
- RECOVER_EXPECTED_NODES=1 \
- RECOVER_AFTER_TIME=5m \
- PLUGIN_LOGLEVEL=INFO \
- ES_JAVA_OPTS="-Dmapper.allow_dots_in_name=true"
+ENV   \
+       HOME=/ \
+       ELASTIC_HOME=/usr/share/elasticsearch \
+       JAVA_VER=1.8.0 \
+       ES_VER=2.4.0 \
+       ES_CONF=/usr/share/elasticsearch/config/ \
+       INSTANCE_RAM=512G \
+       NODE_QUORUM=1 \
+       RECOVER_AFTER_NODES=1 \
+       RECOVER_EXPECTED_NODES=1 \
+       RECOVER_AFTER_TIME=5m \
+       PLUGIN_LOGLEVEL=INFO \
+       ES_JAVA_OPTS="-Dmapper.allow_dots_in_name=true"
 
-LABEL                    \
-      summary="$SUMMARY" \
-      description="$DESCRIPTION" \
-      io.k8s.description="$DESCRIPTION" \
-      io.k8s.display-name="elasticsearch ${ES_VER} core" \
-      io.openshift.expose-services="9200:https, 9300:https" \
-      name="elasticsearch-core-2.4-centos" \
-      version="1" \
-      release="1"
+LABEL \
+       summary="$SUMMARY" \
+       description="$DESCRIPTION" \
+       io.k8s.description="$DESCRIPTION" \
+       io.k8s.display-name="elasticsearch ${ES_VER} core" \
+       io.openshift.expose-services="9200:https, 9300:https" \
+       name="elasticsearch-core-2.4-centos" \
+       version="1" \
+       release="1"
 
 ADD elasticsearch-2.4.0.rpm ${HOME}
 ADD run.sh ${HOME}
