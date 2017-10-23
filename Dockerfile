@@ -20,7 +20,7 @@ ENV HOME=/opt/app-root/src \
  PLUGIN_LOGLEVEL=INFO \
  ES_JAVA_OPTS="-Dmapper.allow_dots_in_name=true"
 
-LABEL 
+LABEL                    \
       summary="$SUMMARY" \
       description="$DESCRIPTION" \
       io.k8s.description="$DESCRIPTION" \
