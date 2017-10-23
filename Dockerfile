@@ -20,7 +20,7 @@ ENV   \
        RECOVER_AFTER_TIME=5m \
        PLUGIN_LOGLEVEL=INFO \
        ES_JAVA_OPTS="-Dmapper.allow_dots_in_name=true"
-
+ 
 LABEL \
        summary="$SUMMARY" \
        description="$DESCRIPTION" \
