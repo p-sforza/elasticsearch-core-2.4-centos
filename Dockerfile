@@ -52,7 +52,7 @@ RUN ["/bin/bash", "-c", "chown -R elasticsearch:elasticsearch /home/elasticsearc
 RUN ["/bin/bash", "-c", "chown -R elasticsearch:elasticsearch /etc/elasticsearch/"]
 RUN ["/bin/bash", "-c", "echo network.host: 0.0.0.0 >>  /usr/share/elasticsearch/config/elasticsearch.yml"]
 RUN ["/bin/bash", "-c", "/usr/share/elasticsearch/bin/plugin install mobz/elasticsearch-head"]
-
+ 
 RUN ["/bin/bash", "-c", "chmod +x ${HOME}/run.sh && ${HOME}/run.sh && rm -f ${HOME}/run.sh"]
 
 # INSTALL BULK UPLOADER
