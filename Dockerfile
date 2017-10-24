@@ -2,12 +2,9 @@ FROM registry.centos.org/centos/centos:7
 
 MAINTAINER Pierluigi Sforza <psforza@redhat.com>
 
-ENV SUMMARY="Base image for elastic 2.4 and utils"      \ 
-    DESCRIPTION="This image provide elastic core and some utils: \
-- plugin head to browse indexes \
-- es-json-load bulk uploader in nodejs"
-
-ENV   \
+ENV \
+       SUMMARY="Base image for elastic 2.4 and utils"      \ 
+       DESCRIPTION="This image provide elastic core and some utils: plugin head to browse indexes; es-json-load bulk uploader in nodejs" \
        HOME=/opt/app-root/src/ \
        ELASTIC_HOME=/usr/share/elasticsearch \
        ELASTIC_LOG="/usr/share/elasticsearch/logs/elasticsearch.log" \
@@ -60,5 +57,3 @@ RUN ["/bin/bash", "-c", "chmod +x ${HOME}/run.sh && su elasticsearch --preserve-
 # INSTALL BULK UPLOADER
 RUN ["/bin/bash", "-c", "yum install -y nodejs npm net-tools"]
 RUN ["/bin/bash", "-c", "npm install es-json-load -g"]
-
-
